@@ -118,7 +118,7 @@ function TiltCard({ area, index }) {
 
 export default function FocusAreas() {
   return (
-    <section className="py-32 relative z-10 [perspective:1000px]">
+    <section className="py-16 md:py-32 relative z-10 [perspective:1000px]">
       <div className="bg-orb bg-cyber-blue w-[40rem] h-[40rem] right-0 top-0" />
       <div className="container mx-auto px-6 relative z-10">
         {/* Section header */}
@@ -133,7 +133,7 @@ export default function FocusAreas() {
               What We Do
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">
             Our{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-cyber-purple to-cyber-blue">
               Focus Areas
@@ -145,7 +145,7 @@ export default function FocusAreas() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {areas.map((area, idx) => (
             <motion.div
               key={idx}

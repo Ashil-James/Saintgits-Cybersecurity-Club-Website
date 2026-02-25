@@ -23,11 +23,10 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-space-black/80 backdrop-blur-2xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled
+          ? "bg-space-black/60 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
           : "bg-transparent pt-4"
-      }`}
+        }`}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3 group cursor-pointer">

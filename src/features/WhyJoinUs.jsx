@@ -71,7 +71,7 @@ const journeySteps = [
 
 export default function WhyJoinUs() {
     return (
-        <section className="py-28 relative z-10 overflow-hidden">
+        <section className="py-16 md:py-28 relative z-10 overflow-hidden">
             <div className="bg-orb bg-cyber-blue w-[35rem] h-[35rem] -left-20 bottom-0" />
 
             <div className="container mx-auto px-6 relative">
@@ -88,7 +88,7 @@ export default function WhyJoinUs() {
                             Why Us
                         </span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-black mb-4">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">
                         Why{" "}
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-cyber-blue via-cyber-purple to-cyber-red">
                             Join the Club?
@@ -101,7 +101,7 @@ export default function WhyJoinUs() {
                 </motion.div>
 
                 {/* Reason cards */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-14 md:mb-20">
                     {reasons.map((r, i) => (
                         <motion.div
                             key={i}
@@ -109,7 +109,7 @@ export default function WhyJoinUs() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.12 }}
-                            className={`liquid-glass rounded-2xl p-7 group cursor-default relative overflow-hidden transition-all duration-500 ${r.borderAccent}`}
+                            className={`liquid-glass rounded-2xl p-5 md:p-7 group cursor-default relative overflow-hidden transition-all duration-500 ${r.borderAccent}`}
                         >
                             {/* Hover gradient */}
                             <div
@@ -158,7 +158,7 @@ export default function WhyJoinUs() {
                         Your Journey With Us
                     </h3>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 relative">
                         {/* Connecting line (desktop) */}
                         <div className="hidden md:block absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] bg-gradient-to-r from-cyber-purple via-cyber-blue to-cyber-red opacity-30" />
 

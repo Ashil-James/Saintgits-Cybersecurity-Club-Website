@@ -49,10 +49,10 @@ function MarqueeRow({ items, reverse = false, speed = 30 }) {
                 {duplicated.map((item, i) => (
                     <div
                         key={i}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-cyber-purple/30 hover:bg-white/[0.06] transition-all duration-300 group cursor-default"
+                        className="inline-flex items-center gap-2 px-3 md:px-5 py-2 md:py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:border-cyber-purple/30 hover:bg-white/[0.06] transition-all duration-300 group cursor-default"
                     >
                         <span className="w-1.5 h-1.5 rounded-full bg-cyber-purple/50 group-hover:bg-cyber-purple group-hover:shadow-[0_0_8px_rgba(122,0,255,0.5)] transition-all" />
-                        <span className="text-sm font-medium text-gray-400 group-hover:text-white transition-colors">
+                        <span className="text-xs md:text-sm font-medium text-gray-400 group-hover:text-white transition-colors">
                             {item}
                         </span>
                     </div>
@@ -83,8 +83,8 @@ export default function TechMarquee() {
 
             {/* Gradient overlays for fade effect */}
             <div className="relative">
-                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-space-black to-transparent z-10 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-space-black to-transparent z-10 pointer-events-none" />
+                <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-space-black to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-space-black to-transparent z-10 pointer-events-none" />
 
                 <MarqueeRow items={tools} speed={35} />
                 <MarqueeRow items={platforms} reverse speed={25} />

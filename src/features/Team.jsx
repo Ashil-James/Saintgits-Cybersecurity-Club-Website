@@ -121,7 +121,7 @@ function TiltCard({ children, index }) {
       onMouseLeave={handleLeave}
       style={{ rotateX, rotateY, transformPerspective: 800 }}
       whileHover={{ y: -12, transition: { type: "spring", stiffness: 300, damping: 20 } }}
-      className="team-card group relative rounded-3xl p-8 text-center flex flex-col h-full cursor-none overflow-hidden"
+      className="team-card group relative rounded-3xl p-5 md:p-8 text-center flex flex-col h-full cursor-none overflow-hidden"
     >
       {children}
     </motion.div>
@@ -130,7 +130,7 @@ function TiltCard({ children, index }) {
 
 export default function Team() {
   return (
-    <section className="py-32 relative z-10" id="team">
+    <section className="py-16 md:py-32 relative z-10" id="team">
       {/* Background glowing orbs */}
       <div className="bg-orb bg-cyber-red w-[40rem] h-[40rem] left-1/4 top-1/4" />
       <div className="bg-orb bg-cyber-purple w-[30rem] h-[30rem] right-1/4 bottom-1/4 opacity-20" />
@@ -142,7 +142,7 @@ export default function Team() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="mb-20 text-center"
+          className="mb-10 md:mb-20 text-center"
         >
           {/* Club Logo */}
           <motion.div
@@ -159,7 +159,7 @@ export default function Team() {
             />
           </motion.div>
 
-          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight">
             Command{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyber-red via-cyber-purple to-cyber-blue">
               Center
@@ -191,7 +191,7 @@ export default function Team() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-7xl mx-auto"
           style={{ perspective: 1000 }}
         >
           {boardMembers.map((member, index) => (

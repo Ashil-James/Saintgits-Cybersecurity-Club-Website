@@ -65,7 +65,7 @@ const impactStats = [
 
 export default function JoinCTA() {
     return (
-        <section className="py-32 relative z-10 overflow-hidden">
+        <section className="py-16 md:py-32 relative z-10 overflow-hidden">
             {/* Background effects */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyber-purple/5 to-transparent pointer-events-none" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyber-purple/10 blur-[150px] rounded-full pointer-events-none" />
@@ -94,14 +94,14 @@ export default function JoinCTA() {
                     </motion.div>
 
                     {/* Headline */}
-                    <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight">
                         Ready to{" "}
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-cyber-red via-cyber-purple to-cyber-blue animate-gradient-x">
                             Level Up?
                         </span>
                     </h2>
 
-                    <p className="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-gray-400 text-base md:text-lg lg:text-xl mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed px-2">
                         Join a community of 100+ driven students who are building real
                         cybersecurity skills, competing globally, and forging connections
                         that last a lifetime.

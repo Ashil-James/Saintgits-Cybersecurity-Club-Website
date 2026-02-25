@@ -84,11 +84,11 @@ export default function AboutTerminal() {
   }, [isInView, hasStarted]);
 
   return (
-    <section className="py-32 relative z-10" id="ops" ref={sectionRef}>
+    <section className="py-16 md:py-32 relative z-10" id="ops" ref={sectionRef}>
       <div className="bg-orb bg-cyber-purple w-[30rem] h-[30rem] left-0 top-1/2 -translate-y-1/2" />
 
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-start gap-16 relative">
+        <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16 relative">
           {/* ── Left: Text + Highlight cards ── */}
           <div className="lg:w-1/2">
             <motion.div
@@ -103,19 +103,19 @@ export default function AboutTerminal() {
                 </span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 leading-tight">
                 More than just <br />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-cyber-red via-cyber-purple to-cyber-blue">
                   a club.
                 </span>
               </h2>
-              <p className="text-gray-400 text-lg leading-relaxed mb-4">
+              <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-3 md:mb-4">
                 We are a community of 100+ passionate students united by a
                 shared mission — to provide every member with the exposure,
                 skills, and opportunities needed to become a competent
                 cybersecurity professional.
               </p>
-              <p className="text-gray-500 text-base leading-relaxed mb-10">
+              <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-8 md:mb-10">
                 From weekly challenges and CTF competitions to industry
                 workshops and networking with high-profile professionals, we
                 serve as the launchpad for the next generation of cybersecurity
@@ -171,7 +171,7 @@ export default function AboutTerminal() {
               </div>
 
               {/* Terminal body */}
-              <div className="p-6 h-[380px] font-mono text-sm overflow-y-auto flex flex-col gap-1 bg-[#020205]/80 backdrop-blur-md custom-scrollbar">
+              <div className="p-4 md:p-6 h-[300px] md:h-[380px] font-mono text-xs md:text-sm overflow-y-auto flex flex-col gap-1 bg-[#020205]/80 custom-scrollbar">
                 {lines.map((line, idx) => {
                   if (line.type === "break")
                     return <div key={idx} className="h-2" />;

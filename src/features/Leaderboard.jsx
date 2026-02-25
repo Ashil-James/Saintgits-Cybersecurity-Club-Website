@@ -116,7 +116,7 @@ const barVariants = {
 
 export default function Leaderboard() {
   return (
-    <section className="py-32 relative z-10" id="leaderboard">
+    <section className="py-16 md:py-32 relative z-10" id="leaderboard">
       <div className="bg-orb bg-cyber-blue w-[30rem] h-[30rem] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
 
       <div className="container mx-auto px-6 max-w-5xl relative z-10">
@@ -125,7 +125,7 @@ export default function Leaderboard() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <motion.div
             initial={{ scale: 0, rotate: -30 }}
@@ -140,13 +140,13 @@ export default function Leaderboard() {
             </span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-4">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
             Master Agent{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500">
               Standings
             </span>
           </h2>
-          <p className="text-gray-500 max-w-lg mx-auto">
+          <p className="text-gray-500 max-w-lg mx-auto text-sm md:text-base">
             Live individual rankings from Forbidden Capture CTF. Ties broken by
             earliest flag submission.
           </p>

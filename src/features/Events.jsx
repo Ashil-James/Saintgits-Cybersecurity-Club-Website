@@ -178,7 +178,7 @@ const summaryStats = [
 
 export default function Events() {
   return (
-    <section className="py-32 relative z-10 overflow-hidden" id="deployments">
+    <section className="py-16 md:py-32 relative z-10 overflow-hidden" id="deployments">
       {/* Background orbs */}
       <div className="bg-orb bg-cyber-purple w-[35rem] h-[35rem] -left-40 top-20 opacity-20" />
       <div className="bg-orb bg-cyber-blue w-[25rem] h-[25rem] right-0 bottom-0 opacity-15" />
@@ -205,13 +205,13 @@ export default function Events() {
             </span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-4">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
             Recent{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyber-purple via-cyber-red to-cyber-blue">
               Deployments
             </span>
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
+          <p className="text-gray-500 max-w-xl mx-auto text-sm md:text-base">
             From workshops to inter-college CTFs — a track record of impactful
             cybersecurity events.
           </p>
@@ -231,7 +231,7 @@ export default function Events() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10 md:mb-16"
         >
           {summaryStats.map((stat, i) => (
             <motion.div
@@ -240,12 +240,12 @@ export default function Events() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 + i * 0.1 }}
-              className="liquid-glass rounded-2xl p-5 text-center group hover:border-cyber-purple/30 transition-all duration-500"
+              className="liquid-glass rounded-2xl p-3 md:p-5 text-center group hover:border-cyber-purple/30 transition-all duration-500"
             >
               <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-cyber-purple/10 text-cyber-purple mb-3 group-hover:scale-110 transition-transform">
                 {stat.icon}
               </div>
-              <div className="text-3xl font-black text-white mb-1">
+              <div className="text-xl md:text-3xl font-black text-white mb-1">
                 <AnimatedCounter target={stat.value} />
                 {stat.suffix && <span>{stat.suffix}</span>}
               </div>
@@ -259,7 +259,7 @@ export default function Events() {
         {/* ── Timeline ── */}
         <div className="relative">
           {/* Vertical timeline line */}
-          <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px">
+          <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-px">
             <motion.div
               className="w-full h-full bg-gradient-to-b from-cyber-purple/50 via-cyber-red/30 to-transparent"
               initial={{ scaleY: 0 }}
@@ -281,12 +281,12 @@ export default function Events() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-60px" }}
                 className={`relative flex items-start mb-12 last:mb-0 ${isLeft
-                    ? "md:flex-row flex-row"
-                    : "md:flex-row-reverse flex-row"
+                  ? "md:flex-row flex-row"
+                  : "md:flex-row-reverse flex-row"
                   }`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-[28px] md:left-1/2 -translate-x-1/2 z-20">
+                <div className="absolute left-[20px] md:left-1/2 -translate-x-1/2 z-20">
                   <motion.div
                     className="w-4 h-4 rounded-full border-2 border-[#0d1117]"
                     style={{ backgroundColor: event.accent }}
@@ -321,7 +321,7 @@ export default function Events() {
 
                 {/* Event Card */}
                 <div
-                  className={`ml-16 md:ml-0 md:w-1/2 ${isLeft ? "md:pl-12" : "md:pr-12"
+                  className={`ml-12 md:ml-0 md:w-1/2 ${isLeft ? "md:pl-12" : "md:pr-12"
                     }`}
                 >
                   <motion.div
@@ -339,7 +339,7 @@ export default function Events() {
                       }}
                     />
 
-                    <div className="p-6 relative">
+                    <div className="p-4 md:p-6 relative">
                       {/* Hover glow */}
                       <div
                         className="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-3xl opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none"
@@ -364,7 +364,7 @@ export default function Events() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
+                      <h3 className="text-base md:text-xl font-bold text-white mb-2 md:mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
                         {event.title}
                       </h3>
 

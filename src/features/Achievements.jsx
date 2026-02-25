@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
 import {
     Trophy,
-    Medal,
-    Presentation,
+    BookOpen,
     Target,
     MessageSquare,
     Users,
     Star,
     Award,
-    ExternalLink,
 } from "lucide-react";
 
 const achievements = [
@@ -43,7 +41,7 @@ const achievements = [
         highlight: false,
     },
     {
-        icon: <Presentation className="w-5 h-5" />,
+        icon: <BookOpen className="w-5 h-5" />,
         title: "Workshop at Carmel College of Engineering",
         description:
             "Alphin D Thomas and Diya Susan Mathew conducted a one-day cybersecurity workshop at Carmel College of Engineering, Punnapra — extending expertise beyond campus.",
@@ -76,7 +74,7 @@ const achievements = [
 
 export default function Achievements() {
     return (
-        <section className="py-28 relative z-10 overflow-hidden">
+        <section className="py-16 md:py-28 relative z-10 overflow-hidden">
             <div className="bg-orb bg-cyber-red w-[30rem] h-[30rem] -right-20 top-0" />
 
             <div className="container mx-auto px-6 relative">
@@ -85,7 +83,7 @@ export default function Achievements() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-10 md:mb-16"
                 >
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass text-yellow-400 mb-6">
                         <Star className="w-3.5 h-3.5" />
@@ -93,7 +91,7 @@ export default function Achievements() {
                             Proven Excellence
                         </span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-black mb-4">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">
                         Student{" "}
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-yellow-400 to-amber-500">
                             Achievements
@@ -106,7 +104,7 @@ export default function Achievements() {
                 </motion.div>
 
                 {/* Achievement grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-5xl mx-auto">
                     {achievements.map((a, i) => (
                         <motion.div
                             key={i}
@@ -114,9 +112,9 @@ export default function Achievements() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.08 }}
-                            className={`relative rounded-2xl p-6 group transition-all duration-500 overflow-hidden ${a.highlight
-                                    ? "md:col-span-1 liquid-glass hover:border-yellow-500/20"
-                                    : "liquid-glass hover:border-white/15"
+                            className={`relative rounded-2xl p-4 md:p-6 group transition-all duration-500 overflow-hidden ${a.highlight
+                                ? "md:col-span-1 liquid-glass hover:border-yellow-500/20"
+                                : "liquid-glass hover:border-white/15"
                                 }`}
                         >
                             {/* Gradient top border */}

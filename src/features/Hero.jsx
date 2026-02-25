@@ -67,7 +67,7 @@ function Counter({ target, suffix = "", duration = 2 }) {
 
 /* ── Floating particles ── */
 function Particles() {
-  const particles = Array.from({ length: 20 }, (_, i) => ({
+  const particles = Array.from({ length: 8 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
     y: Math.random() * 100,
@@ -121,11 +121,11 @@ const heroStats = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-space-black">
+    <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12 md:pt-20 md:pb-0 bg-space-black">
       {/* ── Background Effects ── */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-cyber-purple/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyber-blue/8 blur-[100px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/3 left-0 w-[300px] h-[300px] bg-cyber-red/5 blur-[80px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-cyber-blue/8 blur-[80px] md:blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 left-0 w-[150px] md:w-[300px] h-[150px] md:h-[300px] bg-cyber-red/5 blur-[60px] md:blur-[80px] rounded-full pointer-events-none" />
       <div className="perspective-grid pointer-events-none z-0" />
       <Particles />
 
@@ -180,7 +180,7 @@ export default function Hero() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="text-center max-w-4xl"
         >
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-tight text-white drop-shadow-2xl">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4 md:mb-6 leading-[1.1] text-white drop-shadow-2xl">
             <span
               className="glitch relative inline-block"
               data-text="Learn. Hack."
@@ -193,7 +193,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-gray-400 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
             The premier student-led cybersecurity community at Saintgits — a
             platform for 100+ members to learn, grow, and excel in the world
             of cybersecurity through hands-on CTFs, workshops, and
@@ -206,7 +206,7 @@ export default function Hero() {
               href="https://discord.gg/asjFQKE55p"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative overflow-hidden w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white bg-linear-to-r from-cyber-blue to-cyber-purple hover:scale-105 transition-all shadow-[0_0_30px_rgba(122,0,255,0.5)] group cursor-none inline-flex items-center justify-center"
+              className="relative overflow-hidden w-full sm:w-auto px-6 md:px-8 py-3.5 md:py-4 rounded-xl font-bold text-white bg-linear-to-r from-cyber-blue to-cyber-purple hover:scale-105 transition-all shadow-[0_0_30px_rgba(122,0,255,0.5)] group cursor-none inline-flex items-center justify-center"
             >
               <span className="absolute inset-0 w-full h-full bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-out skew-x-12" />
               <span className="relative flex items-center justify-center gap-2">
@@ -219,7 +219,7 @@ export default function Hero() {
 
             <a
               href="#deployments"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white/80 hover:text-white liquid-glass hover:border-white/20 transition-all inline-flex items-center justify-center gap-2 group"
+              className="w-full sm:w-auto px-6 md:px-8 py-3.5 md:py-4 rounded-xl font-bold text-white/80 hover:text-white liquid-glass hover:border-white/20 transition-all inline-flex items-center justify-center gap-2 group"
             >
               View Events
               <motion.span
@@ -236,7 +236,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 max-w-3xl mx-auto w-full"
           >
             {heroStats.map((stat, i) => (
               <motion.div
@@ -244,12 +244,12 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 + i * 0.15 }}
-                className="text-center group"
+                className="text-center group rounded-xl p-2.5 md:p-0 bg-white/[0.02] md:bg-transparent border border-white/[0.06] md:border-0 md:shadow-none"
               >
-                <div className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+                <div className="text-xl sm:text-2xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
                   <Counter target={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-xs text-gray-500 uppercase tracking-wider mt-1 group-hover:text-gray-400 transition-colors">
+                <div className="text-[10px] md:text-xs text-gray-500 uppercase tracking-wider mt-1 group-hover:text-gray-400 transition-colors">
                   {stat.label}
                 </div>
               </motion.div>
@@ -260,7 +260,7 @@ export default function Hero() {
 
       {/* ── Scroll indicator ── */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
