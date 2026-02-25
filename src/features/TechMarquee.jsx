@@ -70,7 +70,7 @@ export default function TechMarquee() {
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center"
+                    className="text-center max-w-xl mx-auto"
                 >
                     <h3 className="text-sm font-bold tracking-[0.25em] uppercase text-gray-600 mb-1">
                         Tools & Platforms We Train On

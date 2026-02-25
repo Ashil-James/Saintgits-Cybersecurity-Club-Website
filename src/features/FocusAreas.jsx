@@ -153,6 +153,7 @@ export default function FocusAreas() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
+              className="max-w-md mx-auto sm:max-w-none w-full"
             >
               <TiltCard area={area} index={idx} />
             </motion.div>

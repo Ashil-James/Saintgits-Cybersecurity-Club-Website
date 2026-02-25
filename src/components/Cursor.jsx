@@ -3,14 +3,27 @@ import { motion } from "framer-motion";
 
 export default function Cursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isPointerFine, setIsPointerFine] = useState(false);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(pointer: fine)");
+    setIsPointerFine(mediaQuery.matches);
+
+    const handlePointerChange = (e) => setIsPointerFine(e.matches);
+    mediaQuery.addEventListener("change", handlePointerChange);
+
     const updateMousePosition = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener("mousemove", updateMousePosition);
-    return () => window.removeEventListener("mousemove", updateMousePosition);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handlePointerChange);
+      window.removeEventListener("mousemove", updateMousePosition);
+    };
   }, []);
+
+  if (!isPointerFine) return null;
 
   return (
     <>

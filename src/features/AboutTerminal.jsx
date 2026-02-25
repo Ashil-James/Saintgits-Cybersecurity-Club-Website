@@ -2,10 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   Terminal,
-  Shield,
-  Globe,
-  Zap,
-  Code,
   Users,
   Briefcase,
   GraduationCap,
@@ -88,15 +84,15 @@ export default function AboutTerminal() {
       <div className="bg-orb bg-cyber-purple w-[30rem] h-[30rem] left-0 top-1/2 -translate-y-1/2" />
 
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-16 relative">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16 relative">
           {/* ── Left: Text + Highlight cards ── */}
-          <div className="lg:w-1/2">
+          <div className="w-full lg:w-1/2 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass text-cyber-purple mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass text-cyber-purple mb-6 mx-auto lg:mx-0">
                 <Terminal className="w-3.5 h-3.5" />
                 <span className="text-[10px] font-bold tracking-[0.2em] uppercase">
                   Our Mission
@@ -124,7 +120,7 @@ export default function AboutTerminal() {
             </motion.div>
 
             {/* Highlight cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto lg:mx-0">
               {highlights.map((h, i) => (
                 <motion.div
                   key={i}
@@ -132,7 +128,7 @@ export default function AboutTerminal() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-start gap-3 p-4 rounded-xl liquid-glass group hover:border-cyber-purple/20 transition-all duration-300"
+                  className="flex items-start justify-center sm:justify-start gap-3 p-4 rounded-xl liquid-glass group hover:border-cyber-purple/20 transition-all duration-300 text-center sm:text-left"
                 >
                   <div className="w-10 h-10 rounded-lg bg-cyber-purple/10 flex items-center justify-center text-cyber-purple shrink-0 group-hover:scale-110 transition-transform">
                     {h.icon}
@@ -149,7 +145,7 @@ export default function AboutTerminal() {
           </div>
 
           {/* ── Right: Terminal ── */}
-          <div className="lg:w-1/2 w-full relative lg:sticky lg:top-24">
+          <div className="w-full lg:w-1/2 relative lg:sticky lg:top-24 max-w-3xl mx-auto lg:mx-0">
             <div className="absolute inset-0 bg-linear-to-tr from-cyber-red to-cyber-blue blur-[80px] opacity-15" />
 
             <motion.div

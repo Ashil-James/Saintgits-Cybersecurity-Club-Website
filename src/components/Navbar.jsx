@@ -28,7 +28,7 @@ export default function Navbar() {
           : "bg-transparent pt-4"
         }`}
     >
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3 group cursor-pointer">
           <div className="relative flex items-center justify-center w-14 h-14 rounded-xl liquid-glass group-hover:shadow-[0_0_20px_#ff0055] transition-all overflow-hidden">
             <img
@@ -38,10 +38,10 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="text-sm font-bold tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-cyber-red via-cyber-purple to-cyber-blue">
+            <span className="hidden sm:block text-sm font-bold tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-cyber-red via-cyber-purple to-cyber-blue">
               CYBERSECURITY CLUB
             </span>
-            <span className="text-lg font-bold tracking-widest text-white drop-shadow-md">
+            <span className="text-base sm:text-lg font-bold tracking-widest text-white drop-shadow-md">
               SAINTGITS
             </span>
           </div>
@@ -86,7 +86,7 @@ export default function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-full left-0 w-full liquid-glass border-b border-white/10 px-6 py-6 flex flex-col gap-6"
+          className="md:hidden absolute top-full left-0 w-full liquid-glass border-b border-white/10 px-6 py-6 flex flex-col items-center text-center gap-6"
         >
           {navItems.map((item) => (
             <a

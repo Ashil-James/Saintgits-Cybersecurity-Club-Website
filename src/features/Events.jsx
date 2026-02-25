@@ -1,4 +1,4 @@
-import { motion, useInView, useMotionValue, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import {
   Users,
   Trophy,
@@ -8,7 +8,6 @@ import {
   Siren,
   Zap,
   Calendar,
-  ArrowRight,
 } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 
@@ -231,7 +230,7 @@ export default function Events() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10 md:mb-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-10 md:mb-16 max-w-2xl md:max-w-none mx-auto"
         >
           {summaryStats.map((stat, i) => (
             <motion.div
@@ -322,7 +321,7 @@ export default function Events() {
                 {/* Event Card */}
                 <div
                   className={`ml-12 md:ml-0 md:w-1/2 ${isLeft ? "md:pl-12" : "md:pr-12"
-                    }`}
+                    } max-w-xl md:max-w-none mx-auto md:mx-0 w-full`}
                 >
                   <motion.div
                     whileHover={{
