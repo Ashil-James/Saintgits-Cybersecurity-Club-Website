@@ -167,7 +167,7 @@ export default function JoinCTA() {
                         </a>
 
                         <a
-                            href="#deployments"
+                            href="/deployments"
                             className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white/70 hover:text-white liquid-glass hover:border-white/20 transition-all inline-flex items-center justify-center gap-2 group"
                         >
                             View Our Work
