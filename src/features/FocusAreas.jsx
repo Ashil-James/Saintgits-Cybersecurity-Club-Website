@@ -120,7 +120,7 @@ export default function FocusAreas() {
   return (
     <section className="py-16 md:py-32 relative z-10 [perspective:1000px]">
       <div className="bg-orb bg-cyber-blue w-[40rem] h-[40rem] right-0 top-0" />
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 max-w-7xl 2xl:max-w-[1600px] relative z-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -129,23 +129,23 @@ export default function FocusAreas() {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass text-cyber-blue mb-6">
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase">
+            <span className="text-[10px] sm:text-xs xl:text-sm font-bold tracking-[0.2em] uppercase">
               What We Do
             </span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-4">
             Our{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-cyber-purple to-cyber-blue">
               Focus Areas
             </span>
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-sm">
+          <p className="text-gray-500 max-w-xl mx-auto text-sm xl:text-base">
             Building well-rounded cybersecurity professionals through hands-on
             experience across multiple domains of security.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {areas.map((area, idx) => (
             <motion.div
               key={idx}

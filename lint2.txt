@@ -1,0 +1,151 @@
+
+> clubwebsiet@0.0.0 lint
+> eslint .
+
+
+D:\ClubWebsite\src\components\Cursor.jsx
+   2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               no-unused-vars
+  10:5   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+   8 |   useEffect(() => {
+   9 |     const mediaQuery = window.matchMedia("(pointer: fine)");
+> 10 |     setIsPointerFine(mediaQuery.matches);
+     |     ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  11 |
+  12 |     const handlePointerChange = (e) => setIsPointerFine(e.matches);
+  13 |     mediaQuery.addEventListener("change", handlePointerChange);  react-hooks/set-state-in-effect
+
+D:\ClubWebsite\src\components\Navbar.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ClubWebsite\src\components\SectionDivider.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ClubWebsite\src\features\AboutTerminal.jsx
+   2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            no-unused-vars
+  71:5   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  69 |   useEffect(() => {
+  70 |     if (!isInView || hasStarted) return;
+> 71 |     setHasStarted(true);
+     |     ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  72 |
+  73 |     let delay = 0;
+  74 |     BOOT_SEQUENCE.forEach((line) => {  react-hooks/set-state-in-effect
+
+D:\ClubWebsite\src\features\Achievements.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ClubWebsite\src\features\Events.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ClubWebsite\src\features\FocusAreas.jsx
+   1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  47:27  error  'index' is defined but never used                                              no-unused-vars
+
+D:\ClubWebsite\src\features\Hero.jsx
+   1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               no-unused-vars
+  72:8   error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  70 |   const particles = Array.from({ length: 15 }, (_, i) => ({
+  71 |     id: i,
+> 72 |     x: Math.random() * 100,
+     |        ^^^^^^^^^^^^^ Cannot call impure function
+  73 |     y: Math.random() * 100,
+  74 |     size: Math.random() * 4 + 1,
+  75 |     duration: Math.random() * 10 + 10,  react-hooks/purity
+  73:8   error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  71 |     id: i,
+  72 |     x: Math.random() * 100,
+> 73 |     y: Math.random() * 100,
+     |        ^^^^^^^^^^^^^ Cannot call impure function
+  74 |     size: Math.random() * 4 + 1,
+  75 |     duration: Math.random() * 10 + 10,
+  76 |     delay: Math.random() * 5,                                react-hooks/purity
+  74:11  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  72 |     x: Math.random() * 100,
+  73 |     y: Math.random() * 100,
+> 74 |     size: Math.random() * 4 + 1,
+     |           ^^^^^^^^^^^^^ Cannot call impure function
+  75 |     duration: Math.random() * 10 + 10,
+  76 |     delay: Math.random() * 5,
+  77 |     color:                             react-hooks/purity
+  75:15  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  73 |     y: Math.random() * 100,
+  74 |     size: Math.random() * 4 + 1,
+> 75 |     duration: Math.random() * 10 + 10,
+     |               ^^^^^^^^^^^^^ Cannot call impure function
+  76 |     delay: Math.random() * 5,
+  77 |     color:
+  78 |       i % 3 === 0                                   react-hooks/purity
+  76:12  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  74 |     size: Math.random() * 4 + 1,
+  75 |     duration: Math.random() * 10 + 10,
+> 76 |     delay: Math.random() * 5,
+     |            ^^^^^^^^^^^^^ Cannot call impure function
+  77 |     color:
+  78 |       i % 3 === 0
+  79 |         ? "bg-cyber-red shadow-[0_0_10px_#ff0055]"               react-hooks/purity
+  99:20  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+   97 |           animate={{
+   98 |             y: [0, -120, 0],
+>  99 |             x: [0, Math.random() * 50 - 25, 0],
+      |                    ^^^^^^^^^^^^^ Cannot call impure function
+  100 |             opacity: [0, 0.6, 0],
+  101 |           }}
+  102 |           transition={{             react-hooks/purity
+
+D:\ClubWebsite\src\features\JoinCTA.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ClubWebsite\src\features\Leaderboard.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ClubWebsite\src\features\Services.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ClubWebsite\src\features\Team.jsx
+   1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  96:31  error  'index' is defined but never used                                              no-unused-vars
+
+D:\ClubWebsite\src\features\TechMarquee.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+D:\ClubWebsite\src\features\TerminalSimulator.jsx
+   2:10  error    'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                    no-unused-vars
+  24:6   warning  React Hook useEffect has a missing dependency: 'bootSequence'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\ClubWebsite\src\features\WhyJoinUs.jsx
+  1:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+✖ 26 problems (25 errors, 1 warning)
+

@@ -77,7 +77,7 @@ export default function Achievements() {
         <section className="py-16 md:py-28 relative z-10 overflow-hidden">
             <div className="bg-orb bg-cyber-red w-[30rem] h-[30rem] -right-20 top-0" />
 
-            <div className="container mx-auto px-6 relative">
+            <div className="container mx-auto px-6 max-w-7xl 2xl:max-w-[1600px] relative">
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -87,24 +87,24 @@ export default function Achievements() {
                 >
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass text-yellow-400 mb-6">
                         <Star className="w-3.5 h-3.5" />
-                        <span className="text-[10px] font-bold tracking-[0.2em] uppercase">
+                        <span className="text-[10px] sm:text-xs xl:text-sm font-bold tracking-[0.2em] uppercase">
                             Proven Excellence
                         </span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-4">
                         Student{" "}
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-yellow-400 to-amber-500">
                             Achievements
                         </span>
                     </h2>
-                    <p className="text-gray-500 max-w-lg mx-auto text-sm">
+                    <p className="text-gray-500 max-w-lg mx-auto text-sm xl:text-base">
                         Our members don&apos;t just learn — they compete, win, teach, and
                         make an impact beyond the campus.
                     </p>
                 </motion.div>
 
                 {/* Achievement grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6 xl:gap-8 max-w-5xl lg:max-w-none mx-auto">
                     {achievements.map((a, i) => (
                         <motion.div
                             key={i}
@@ -113,8 +113,8 @@ export default function Achievements() {
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.08 }}
                             className={`relative rounded-2xl p-4 md:p-6 group transition-all duration-500 overflow-hidden ${a.highlight
-                                ? "md:col-span-1 liquid-glass hover:border-yellow-500/20"
-                                : "liquid-glass hover:border-white/15"
+                                    ? "md:col-span-1 liquid-glass hover:border-yellow-500/20"
+                                    : "liquid-glass hover:border-white/15"
                                 }`}
                         >
                             {/* Gradient top border */}
@@ -127,20 +127,20 @@ export default function Achievements() {
                                 <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             )}
 
-                            <div className="relative z-10 flex gap-4">
+                            <div className="relative z-10 flex gap-4 xl:gap-6">
                                 {/* Icon */}
                                 <div
-                                    className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 border border-white/5 transition-all duration-300 group-hover:scale-110 ${a.iconBg}`}
+                                    className={`w-11 h-11 xl:w-14 xl:h-14 rounded-xl flex items-center justify-center shrink-0 border border-white/5 transition-all duration-300 group-hover:scale-110 ${a.iconBg}`}
                                 >
                                     {a.icon}
                                 </div>
 
                                 {/* Content */}
                                 <div className="min-w-0 flex-1">
-                                    <h3 className="text-base font-bold text-white mb-2 leading-snug">
+                                    <h3 className="text-base xl:text-lg font-bold text-white mb-2 leading-snug">
                                         {a.title}
                                     </h3>
-                                    <p className="text-sm text-gray-400 leading-relaxed mb-3">
+                                    <p className="text-sm xl:text-base text-gray-400 leading-relaxed mb-3 xl:mb-4">
                                         {a.description}
                                     </p>
 
@@ -149,7 +149,7 @@ export default function Achievements() {
                                         {a.tags.map((tag, j) => (
                                             <span
                                                 key={j}
-                                                className="px-2.5 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase bg-white/[0.04] text-gray-500 border border-white/[0.06] group-hover:border-white/10 group-hover:text-gray-400 transition-all"
+                                                className="px-2.5 py-0.5 xl:py-1 rounded-md text-[10px] xl:text-xs font-bold tracking-wider uppercase bg-white/[0.04] text-gray-500 border border-white/[0.06] group-hover:border-white/10 group-hover:text-gray-400 transition-all"
                                             >
                                                 {tag}
                                             </span>

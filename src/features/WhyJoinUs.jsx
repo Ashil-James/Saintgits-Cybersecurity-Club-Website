@@ -118,7 +118,7 @@ export default function WhyJoinUs() {
 
                             <div className="relative z-10">
                                 <div
-                                    className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 border border-white/5 ${r.iconBg} group-hover:scale-110 transition-transform duration-300`}
+                                    className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 border border-white/5 ${r.iconBg} group-hover:scale-110 shadow-lg group-hover:shadow-[0_0_30px_currentColor] transition-all duration-500`}
                                 >
                                     {r.icon}
                                 </div>
@@ -172,7 +172,7 @@ export default function WhyJoinUs() {
                                 className="text-center group relative"
                             >
                                 {/* Step number */}
-                                <div className="relative mx-auto mb-4 w-14 h-14 rounded-full liquid-glass flex items-center justify-center border border-white/10 group-hover:border-cyber-purple/40 transition-all duration-300">
+                                <div className="relative mx-auto mb-4 w-14 h-14 rounded-full liquid-glass flex items-center justify-center border border-white/10 group-hover:border-cyber-purple/60 group-hover:shadow-[0_0_30px_rgba(122,0,255,0.5)] group-hover:-translate-y-1 transition-all duration-500 z-10">
                                     <span className="text-lg font-black text-transparent bg-clip-text bg-gradient-to-br from-cyber-purple to-cyber-blue">
                                         {s.step}
                                     </span>
