@@ -10,6 +10,7 @@ import {
   Calendar,
 } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
+import EventDetailModal from "./EventDetailModal";
 
 const events = [
   {
@@ -27,6 +28,42 @@ const events = [
     tag: "WORKSHOP",
     highlight: 100,
     highlightLabel: "attendees",
+    coverImage: "/events/cybercrime_awareness.png",
+    detailStats: [
+      { value: "100+", label: "Students" },
+      { value: "3hrs", label: "Duration" },
+      { value: "1", label: "Expert Speaker" },
+      { value: "5+", label: "Case Studies" },
+    ],
+    longDesc: [
+      "The Cybercrime Awareness & Investigation workshop was a landmark event organized in collaboration with the Kerala Police Academy. This session brought real-world cybercrime investigation expertise directly to our campus, giving students an unprecedented look into how law enforcement tackles digital crime.",
+      "Instructor Mobin K Eldo from the Kerala Police Academy walked participants through the complete lifecycle of a cybercrime investigation — from initial incident reporting and evidence preservation to digital forensic analysis and courtroom presentation of electronic evidence.",
+      "Students gained hands-on experience with forensic imaging techniques, learned about chain-of-custody requirements for digital evidence, and studied real anonymized case files from actual cybercrime investigations conducted by the Kerala Police Cyberdome.",
+    ],
+    agenda: [
+      { time: "10:00 AM", title: "Inauguration & Introduction", desc: "Welcome address and overview of cybercrime landscape in India" },
+      { time: "10:30 AM", title: "Digital Evidence Fundamentals", desc: "Understanding what constitutes digital evidence and how to preserve it" },
+      { time: "11:30 AM", title: "Live Forensics Demo", desc: "Demonstration of forensic imaging and data recovery techniques" },
+      { time: "12:30 PM", title: "Case Studies", desc: "Analysis of real cybercrime cases investigated by Kerala Police" },
+      { time: "1:00 PM", title: "Q&A & Closing", desc: "Interactive session with the instructor and certificate distribution" },
+    ],
+    keyTakeaways: [
+      "Understanding of Indian cybercrime laws (IT Act 2000, IPC sections)",
+      "Digital evidence preservation and chain-of-custody procedures",
+      "Forensic imaging techniques for mobile and computer devices",
+      "Social engineering attack recognition and prevention",
+      "Reporting procedures for cybercrime incidents",
+      "Career opportunities in cyber forensics and law enforcement",
+    ],
+    speakers: [
+      { name: "Mobin K Eldo", role: "Instructor, Kerala Police Academy" },
+    ],
+    gallery: ["/events/cybercrime_awareness.png"],
+    testimonial: {
+      quote: "This session completely changed my perspective on cybersecurity. Learning from actual law enforcement officers about real cases was incredibly eye-opening.",
+      author: "Workshop Participant",
+      role: "3rd Year CS Student",
+    },
   },
   {
     title: "Pegasus CTF",
@@ -43,6 +80,43 @@ const events = [
     tag: "CTF",
     highlight: null,
     highlightLabel: "",
+    coverImage: "/events/pegasus_ctf.png",
+    detailStats: [
+      { value: "50+", label: "Participants" },
+      { value: "8hrs", label: "Duration" },
+      { value: "25+", label: "Challenges" },
+      { value: "10+", label: "Colleges" },
+    ],
+    longDesc: [
+      "Pegasus CTF was an ambitious inter-college Capture The Flag competition that brought together the brightest cybersecurity minds from across Kerala. This flagship event put our club on the map as a serious force in the competitive cybersecurity community.",
+      "The competition featured 25+ challenges across five categories: Web Exploitation, Binary Exploitation, Cryptography, Digital Forensics, and OSINT. Each challenge was handcrafted by our club's CTF team to test both fundamental knowledge and creative problem-solving ability.",
+      "Teams competed in a Jeopardy-style format with a dynamic scoring system — challenges became worth fewer points as more teams solved them, rewarding speed and skill equally. The event concluded with a dramatic awards ceremony and networking session.",
+    ],
+    agenda: [
+      { time: "9:00 AM", title: "Registration & Team Setup", desc: "Teams verified credentials and set up their environments" },
+      { time: "10:00 AM", title: "CTF Begins", desc: "All challenges unlocked simultaneously across 5 categories" },
+      { time: "1:00 PM", title: "Mid-Event Hints", desc: "Partial hints released for unsolved challenges" },
+      { time: "4:00 PM", title: "Final Hour Sprint", desc: "Last-minute solves and scoreboard freeze" },
+      { time: "5:00 PM", title: "Awards & Networking", desc: "Winners announced, prizes distributed, and post-event discussion" },
+    ],
+    keyTakeaways: [
+      "Advanced web exploitation techniques (XSS, SQLi, SSRF)",
+      "Binary analysis and reverse engineering fundamentals",
+      "Cryptographic algorithm weaknesses and attacks",
+      "Digital forensics and memory analysis",
+      "Team coordination under competitive pressure",
+      "Cross-college networking and community building",
+    ],
+    speakers: [
+      { name: "Alphin D Thomas", role: "Challenge Author & CTO" },
+      { name: "Ashil James", role: "CTF Team Captain & Infrastructure" },
+    ],
+    gallery: ["/events/pegasus_ctf.png"],
+    testimonial: {
+      quote: "The challenge quality was on par with national-level CTFs. Pegasus CTF proved that student-organized events can be just as impactful as corporate ones.",
+      author: "Team Captain",
+      role: "Competing College",
+    },
   },
   {
     title: "Forbidden Capture CTF",
@@ -59,6 +133,41 @@ const events = [
     tag: "CTF",
     highlight: 20,
     highlightLabel: "teams",
+    coverImage: "/events/forbidden_capture_ctf.png",
+    detailStats: [
+      { value: "20", label: "Teams" },
+      { value: "60+", label: "Participants" },
+      { value: "15", label: "Challenges" },
+      { value: "4hrs", label: "Duration" },
+    ],
+    longDesc: [
+      "Forbidden Capture was our flagship internal CTF designed to identify and nurture cybersecurity talent within the college. With 20 teams of 3 members each, it was the largest internal competition in the club's history.",
+      "The challenges were carefully designed to have a progressive difficulty curve — from beginner-friendly tasks that taught fundamentals, to expert-level problems that challenged even our most experienced members. Categories included Web Exploitation, Reverse Engineering, Cryptography, and Steganography.",
+      "The event served as a talent pipeline for our competitive CTF team, with top performers being invited to represent the club in national and international competitions.",
+    ],
+    agenda: [
+      { time: "2:00 PM", title: "Team Registration", desc: "60+ students formed 20 teams of 3 members each" },
+      { time: "2:30 PM", title: "Rules & Platform Briefing", desc: "Introduction to the CTF platform and challenge categories" },
+      { time: "3:00 PM", title: "Competition Start", desc: "15 challenges released across 4 categories with dynamic scoring" },
+      { time: "6:30 PM", title: "Scoreboard Freeze & Results", desc: "Final standings revealed and prizes awarded" },
+    ],
+    keyTakeaways: [
+      "Hands-on experience with web application vulnerabilities",
+      "Reverse engineering of compiled binaries",
+      "Cryptographic attack methodologies",
+      "Steganography detection and extraction",
+      "Time-pressured problem solving and team collaboration",
+    ],
+    speakers: [
+      { name: "Alphin D Thomas", role: "Event Organizer & CTO" },
+      { name: "Angela Mary Thomas", role: "Red Team Captain" },
+    ],
+    gallery: ["/events/forbidden_capture_ctf.png"],
+    testimonial: {
+      quote: "Forbidden Capture was my first CTF and it completely got me hooked on cybersecurity. The challenges were tough but rewarding.",
+      author: "First-time Participant",
+      role: "2nd Year CS Student",
+    },
   },
   {
     title: "Vulnerability Exploitation Workshop",
@@ -75,6 +184,41 @@ const events = [
     tag: "WORKSHOP",
     highlight: 70,
     highlightLabel: "attendees",
+    coverImage: "/events/vuln_exploitation.png",
+    detailStats: [
+      { value: "70", label: "Attendees" },
+      { value: "2.5hrs", label: "Duration" },
+      { value: "3", label: "Live Demos" },
+      { value: "1", label: "Lab Session" },
+    ],
+    longDesc: [
+      "This high-impact workshop gave students a visceral understanding of how software vulnerabilities are discovered and exploited in real-world scenarios. The session was led by Aaron Bobby Jose, who demonstrated the full attack chain from reconnaissance to exploitation.",
+      "The centerpiece of the workshop was a live demonstration of CVE exploitation on a Windows 7 machine using Metasploit. Students watched in real-time as Aaron gained remote access, escalated privileges, and demonstrated data exfiltration — all while explaining the underlying vulnerability and how defenders should patch it.",
+      "The workshop also covered responsible disclosure practices, the ethics of vulnerability research, and career paths in offensive security. Participants left with a deeper understanding of why patching and security hygiene matter.",
+    ],
+    agenda: [
+      { time: "10:00 AM", title: "Vulnerability Landscape Overview", desc: "Understanding CVEs, CVSS scores, and the vulnerability lifecycle" },
+      { time: "10:45 AM", title: "Reconnaissance & Scanning", desc: "Using Nmap and other tools to identify vulnerable systems" },
+      { time: "11:30 AM", title: "Live Exploitation Demo", desc: "Real-time Windows 7 exploitation using Metasploit framework" },
+      { time: "12:15 PM", title: "Post-Exploitation & Defense", desc: "Privilege escalation, persistence, and how to defend against these attacks" },
+    ],
+    keyTakeaways: [
+      "Understanding the CVE database and vulnerability scoring",
+      "Network reconnaissance and service enumeration",
+      "Metasploit framework fundamentals",
+      "Windows exploitation techniques and post-exploitation",
+      "Responsible disclosure and ethical considerations",
+      "Importance of patch management and security updates",
+    ],
+    speakers: [
+      { name: "Aaron Bobby Jose", role: "Tool Specialist & Lab Coordinator" },
+    ],
+    gallery: ["/events/vuln_exploitation.png"],
+    testimonial: {
+      quote: "Watching a machine get hacked live in front of you is both terrifying and fascinating. This workshop made cybersecurity real for me.",
+      author: "Workshop Attendee",
+      role: "2nd Year CS Student",
+    },
   },
   {
     title: "EY Capture The Flag",
@@ -91,6 +235,42 @@ const events = [
     tag: "CTF",
     highlight: 60,
     highlightLabel: "participants",
+    coverImage: "/events/ey_ctf.png",
+    detailStats: [
+      { value: "60+", label: "Participants" },
+      { value: "24hrs", label: "Duration" },
+      { value: "20+", label: "Challenges" },
+      { value: "3", label: "Winners" },
+    ],
+    longDesc: [
+      "The EY Capture The Flag was a landmark collaboration between our Cybersecurity Club and Ernst & Young (EY), one of the Big Four consulting firms. This 24-hour marathon CTF was designed to identify exceptional cybersecurity talent, with the ultimate prize — internship opportunities at EY's cybersecurity division.",
+      "The competition pushed participants to their limits with challenges spanning web application security, binary exploitation, advanced cryptography, and network forensics. The 24-hour format tested not just technical skills but also endurance, strategy, and team dynamics.",
+      "Top-performing teams were offered direct internship interviews with EY's cybersecurity consulting practice, making this one of the highest-stakes student competitions in Kerala. The event set a new standard for industry-academia collaboration in cybersecurity education.",
+    ],
+    agenda: [
+      { time: "Day 1 - 10:00 AM", title: "Kickoff & EY Introduction", desc: "EY representatives introduced their cybersecurity practice and the competition format" },
+      { time: "Day 1 - 11:00 AM", title: "Competition Begins", desc: "All 20+ challenges unlocked across web, crypto, RE, and forensics" },
+      { time: "Day 1 - 6:00 PM", title: "Mid-Event Check-in", desc: "Difficulty scaling and bonus challenges released" },
+      { time: "Day 2 - 10:00 AM", title: "Final Scoreboard & Awards", desc: "Winners announced and EY internship offers extended to top 3 teams" },
+    ],
+    keyTakeaways: [
+      "Industry-grade web security assessment techniques",
+      "Advanced cryptographic analysis and code-breaking",
+      "Network packet analysis and traffic forensics",
+      "Real-world application of cybersecurity skills under pressure",
+      "Direct exposure to corporate cybersecurity career paths",
+      "Understanding of EY's cybersecurity consulting methodology",
+    ],
+    speakers: [
+      { name: "EY Cybersecurity Team", role: "Event Sponsors & Mentors" },
+      { name: "Alphin D Thomas", role: "Club CTO & Co-organizer" },
+    ],
+    gallery: ["/events/ey_ctf.png"],
+    testimonial: {
+      quote: "Getting an internship offer from EY through a college CTF was surreal. This event proved that competitive hacking can directly lead to career opportunities.",
+      author: "CTF Winner",
+      role: "3rd Year CS Student",
+    },
   },
   {
     title: "Ethical Hacking Workshop",
@@ -107,6 +287,40 @@ const events = [
     tag: "WORKSHOP",
     highlight: 50,
     highlightLabel: "attendees",
+    coverImage: "/events/ethical_hacking.png",
+    detailStats: [
+      { value: "50", label: "Attendees" },
+      { value: "3hrs", label: "Duration" },
+      { value: "10", label: "OWASP Vulns" },
+      { value: "5", label: "Lab Exercises" },
+    ],
+    longDesc: [
+      "This foundational workshop was designed as a comprehensive introduction to ethical hacking and penetration testing. It covered the full OWASP Top 10 vulnerability list with practical demonstrations and hands-on lab exercises.",
+      "Attendees worked through real vulnerable web applications using industry-standard tools like Burp Suite and OWASP ZAP. Each vulnerability was demonstrated with a live exploit followed by a guided lab exercise where students could practice the technique themselves.",
+      "The workshop emphasized responsible disclosure practices — participants learned not just how to find vulnerabilities, but the ethical framework for reporting them. This session sparked many students' interest in cybersecurity and led to a significant increase in club membership.",
+    ],
+    agenda: [
+      { time: "2:00 PM", title: "Introduction to Ethical Hacking", desc: "Overview of penetration testing methodology and legal framework" },
+      { time: "2:30 PM", title: "OWASP Top 10 Walkthrough", desc: "Detailed explanation of each vulnerability with real-world examples" },
+      { time: "3:30 PM", title: "Hands-on Lab Session", desc: "Students practiced finding and exploiting vulnerabilities in a controlled environment" },
+      { time: "4:30 PM", title: "Responsible Disclosure & Careers", desc: "Ethics of vulnerability research and career opportunities in ethical hacking" },
+    ],
+    keyTakeaways: [
+      "Complete understanding of OWASP Top 10 vulnerabilities",
+      "Practical use of Burp Suite and OWASP ZAP",
+      "SQL Injection, XSS, and CSRF exploitation techniques",
+      "Penetration testing methodology and reporting",
+      "Responsible disclosure best practices",
+    ],
+    speakers: [
+      { name: "Alphin D Thomas", role: "CTO, Cybersecurity Club" },
+    ],
+    gallery: ["/events/ethical_hacking.png"],
+    testimonial: {
+      quote: "This workshop was my entry point into cybersecurity. The hands-on approach made complex concepts feel accessible and exciting.",
+      author: "New Club Member",
+      role: "2nd Year CS Student",
+    },
   },
   {
     title: "UST Capture The Flag",
@@ -123,6 +337,41 @@ const events = [
     tag: "CTF",
     highlight: 50,
     highlightLabel: "participants",
+    coverImage: "/events/ust_ctf.png",
+    detailStats: [
+      { value: "50+", label: "Participants" },
+      { value: "24hrs", label: "Duration" },
+      { value: "15+", label: "Challenges" },
+      { value: "Top 3", label: "Rewarded" },
+    ],
+    longDesc: [
+      "The UST CTF was organized in collaboration with UST Global, challenging participants with 24 hours of intense problem-solving across multiple cybersecurity domains. This was the club's first industry-partnership event and set the foundation for future collaborations.",
+      "The challenge set featured progressively harder problems that tested participants' abilities in web exploitation, reverse engineering, cryptography, and OSINT. UST's cybersecurity team contributed several challenges based on real scenarios they'd encountered in their professional work.",
+      "The competition fostered a culture of overnight hacking sessions, mentorship between senior and junior members, and established the club's reputation as a serious competitive force in the regional cybersecurity community.",
+    ],
+    agenda: [
+      { time: "Day 1 - 10:00 AM", title: "Opening Ceremony", desc: "UST representatives introduced the competition and their cybersecurity practice" },
+      { time: "Day 1 - 11:00 AM", title: "CTF Begins", desc: "Challenges released across web, crypto, RE, and OSINT categories" },
+      { time: "Day 1 - 8:00 PM", title: "Overnight Hacking", desc: "Teams pushed through the night with mentor support available" },
+      { time: "Day 2 - 10:00 AM", title: "Awards & Closing", desc: "Final standings, prize distribution, and feedback session" },
+    ],
+    keyTakeaways: [
+      "Advanced web exploitation and API security testing",
+      "Binary reverse engineering with Ghidra and radare2",
+      "Cryptographic attack implementation",
+      "OSINT techniques and information gathering",
+      "24-hour endurance and team strategy",
+      "Industry exposure through UST Global partnership",
+    ],
+    speakers: [
+      { name: "UST Cybersecurity Team", role: "Event Partner & Challenge Authors" },
+    ],
+    gallery: ["/events/ust_ctf.png"],
+    testimonial: {
+      quote: "24 hours of pure hacking with industry-grade challenges — UST CTF pushed our skills to a whole new level and showed us what professional cybersecurity looks like.",
+      author: "Participating Team Lead",
+      role: "3rd Year CS Student",
+    },
   },
 ];
 
@@ -176,11 +425,13 @@ const summaryStats = [
 ];
 
 export default function Events() {
+  const [selectedEvent, setSelectedEvent] = useState(null);
+
   return (
     <section className="py-16 md:py-32 relative z-10 overflow-hidden" id="deployments">
       {/* Background orbs */}
-      <div className="bg-orb bg-cyber-purple w-[35rem] h-[35rem] -left-40 top-20 opacity-20" />
-      <div className="bg-orb bg-cyber-blue w-[25rem] h-[25rem] right-0 bottom-0 opacity-15" />
+      <div className="bg-orb bg-cyber-purple w-[20rem] md:w-[35rem] h-[20rem] md:h-[35rem] -left-40 top-20 opacity-20" />
+      <div className="bg-orb bg-cyber-blue w-[15rem] md:w-[25rem] h-[15rem] md:h-[25rem] right-0 bottom-0 opacity-15" />
 
       <div className="container mx-auto px-6 max-w-7xl 2xl:max-w-[1600px] relative z-10">
         {/* ── Section Header ── */}
@@ -328,7 +579,8 @@ export default function Events() {
                       y: -6,
                       transition: { type: "spring", stiffness: 300 },
                     }}
-                    className="event-card group relative rounded-2xl overflow-hidden"
+                    onClick={() => setSelectedEvent(event)}
+                    className="event-card group relative rounded-2xl overflow-hidden cursor-pointer"
                   >
                     {/* Top accent bar */}
                     <div
@@ -401,6 +653,21 @@ export default function Events() {
                           </div>
                         )}
                       </div>
+
+                      {/* View Details hint */}
+                      <div className="mt-4 pt-4 border-t border-white/[0.05] flex items-center justify-between">
+                        <span className="text-xs text-gray-600 group-hover:text-gray-400 transition-colors">
+                          Click to view full details
+                        </span>
+                        <motion.span
+                          className="text-xs font-bold uppercase tracking-wider"
+                          style={{ color: event.accent }}
+                          animate={{ x: [0, 4, 0] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        >
+                          →
+                        </motion.span>
+                      </div>
                     </div>
                   </motion.div>
                 </div>
@@ -409,6 +676,13 @@ export default function Events() {
           })}
         </div>
       </div>
+
+      {/* Event Detail Modal */}
+      <EventDetailModal
+        event={selectedEvent}
+        isOpen={!!selectedEvent}
+        onClose={() => setSelectedEvent(null)}
+      />
     </section>
   );
 }
