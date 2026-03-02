@@ -81,7 +81,7 @@ export default function AboutTerminal() {
 
   return (
     <section className="py-16 md:py-32 relative z-10" id="ops" ref={sectionRef}>
-      <div className="bg-orb bg-cyber-purple w-[30rem] h-[30rem] left-0 top-1/2 -translate-y-1/2" />
+      <div className="bg-orb bg-cyber-purple w-[15rem] md:w-[30rem] h-[15rem] md:h-[30rem] left-0 top-1/2 -translate-y-1/2" />
 
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16 relative">

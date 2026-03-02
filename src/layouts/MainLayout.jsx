@@ -4,7 +4,7 @@ import Cursor from "../components/Cursor";
 
 export default function MainLayout() {
   return (
-    <div className="min-h-screen bg-space-black flex flex-col relative selection:bg-cyber-red/30">
+    <div className="min-h-screen bg-space-black flex flex-col relative selection:bg-cyber-red/30 overflow-x-hidden">
       {/* Ambient aurora glow + noise texture */}
       <div className="aurora-bg" />
       <div className="noise-overlay" />

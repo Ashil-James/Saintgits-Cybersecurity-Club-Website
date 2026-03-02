@@ -180,8 +180,8 @@ export default function Team() {
   return (
     <section className="py-16 md:py-32 relative z-10" id="team">
       {/* Background glowing orbs */}
-      <div className="bg-orb bg-cyber-red w-[40rem] h-[40rem] left-1/4 top-1/4" />
-      <div className="bg-orb bg-cyber-purple w-[30rem] h-[30rem] right-1/4 bottom-1/4 opacity-20" />
+      <div className="bg-orb bg-cyber-red w-[20rem] md:w-[40rem] h-[20rem] md:h-[40rem] left-1/4 top-1/4" />
+      <div className="bg-orb bg-cyber-purple w-[15rem] md:w-[30rem] h-[15rem] md:h-[30rem] right-1/4 bottom-1/4 opacity-20" />
 
       <div className="container mx-auto px-6 max-w-7xl 2xl:max-w-[1600px] relative z-10">
         {/* ── Section Title ── */}

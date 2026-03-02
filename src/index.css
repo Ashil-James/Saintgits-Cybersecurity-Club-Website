@@ -9,11 +9,17 @@
 }
 
 @layer base {
+  html {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
   body {
     background-color: var(--color-space-black);
     color: white;
     font-family: var(--font-cyber);
     overflow-x: hidden;
+    max-width: 100vw;
   }
 
   /* Only hide the default cursor on desktop devices for our custom cursor */

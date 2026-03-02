@@ -72,7 +72,7 @@ const journeySteps = [
 export default function WhyJoinUs() {
     return (
         <section className="py-16 md:py-28 relative z-10 overflow-hidden">
-            <div className="bg-orb bg-cyber-blue w-[35rem] h-[35rem] -left-20 bottom-0" />
+            <div className="bg-orb bg-cyber-blue w-[20rem] md:w-[35rem] h-[20rem] md:h-[35rem] -left-20 bottom-0" />
 
             <div className="container mx-auto px-6 relative">
                 {/* Header */}
