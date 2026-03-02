@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import Hero from "../features/Hero";
 import AboutTerminal from "../features/AboutTerminal";
 import TechMarquee from "../features/TechMarquee";
@@ -14,22 +12,6 @@ import JoinCTA from "../features/JoinCTA";
 import SectionDivider from "../components/SectionDivider";
 
 export default function Home() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    // Extract section id from path (e.g., "/ops" -> "ops")
-    const sectionId = pathname.replace("/", "");
-    if (sectionId) {
-      const el = document.getElementById(sectionId);
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      }
-    } else {
-      window.scrollTo(0, 0);
-    }
-  }, [pathname]);
 
   return (
     <div className="flex flex-col pb-20">

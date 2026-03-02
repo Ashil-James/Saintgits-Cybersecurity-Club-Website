@@ -21,11 +21,11 @@ const BOOT_SEQUENCE = [
     type: "banner",
   },
   {
-    text: "║   SAINTGITS CYBERSECURITY CLUB v2.0      ║",
+    text: "║   SAINTGITS CYBERSECURITY CLUB v2.0             ║",
     type: "banner",
   },
   {
-    text: "║   Members: 100+ | Status: OPERATIONAL    ║",
+    text: "║   Members: 100+ | Status: OPERATIONAL        ║",
     type: "banner",
   },
   {

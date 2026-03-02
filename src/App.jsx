@@ -7,10 +7,6 @@ export default function App() {
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
-        <Route path="ops" element={<Home />} />
-        <Route path="deployments" element={<Home />} />
-        <Route path="leaderboard" element={<Home />} />
-        <Route path="team" element={<Home />} />
       </Route>
     </Routes>
   );

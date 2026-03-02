@@ -255,8 +255,8 @@ export default function Hero() {
               </span>
             </a>
 
-            <a
-              href="/deployments"
+            <button
+              onClick={() => document.getElementById('deployments')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full sm:w-auto px-6 md:px-8 xl:px-10 py-3.5 md:py-4 xl:py-5 rounded-xl xl:rounded-2xl font-bold text-white/80 hover:text-white liquid-glass hover:border-white/20 transition-all inline-flex items-center justify-center gap-2 group text-sm md:text-base xl:text-lg"
             >
               View Events
@@ -266,7 +266,7 @@ export default function Hero() {
               >
                 →
               </motion.span>
-            </a>
+            </button>
           </div>
 
           {/* ── Stats Ticker ── */}

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -14,11 +13,19 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { name: "Operations", path: "/ops" },
-    { name: "Deployments", path: "/deployments" },
-    { name: "Hall of Fame", path: "/leaderboard" },
-    { name: "Command Center", path: "/team" },
+    { name: "Operations", section: "ops" },
+    { name: "Deployments", section: "deployments" },
+    { name: "Hall of Fame", section: "leaderboard" },
+    { name: "Command Center", section: "team" },
   ];
+
+  const scrollTo = (sectionId) => {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false);
+  };
 
   return (
     <motion.nav
@@ -50,14 +57,14 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-6 lg:gap-8 xl:gap-12">
           {navItems.map((item) => (
-            <Link
+            <button
               key={item.name}
-              to={item.path}
-              className="text-xs lg:text-sm xl:text-base font-medium text-gray-400 hover:text-white relative group transition-colors"
+              onClick={() => scrollTo(item.section)}
+              className="text-xs lg:text-sm xl:text-base font-medium text-gray-400 hover:text-white relative group transition-colors bg-transparent border-none cursor-pointer"
             >
               {item.name}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-cyber-blue group-hover:w-full transition-all duration-300 shadow-[0_0_10px_#0044ff]" />
-            </Link>
+            </button>
           ))}
           <a
             href="https://discord.gg/asjFQKE55p"
@@ -91,18 +98,17 @@ export default function Navbar() {
             className="md:hidden absolute top-full left-0 w-full liquid-glass border-b border-white/10 px-6 py-6 flex flex-col items-center text-center gap-6"
           >
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.name}
-                to={item.path}
-                className="text-lg text-gray-300 hover:text-white"
-                onClick={() => setIsOpen(false)}
+                onClick={() => scrollTo(item.section)}
+                className="text-lg text-gray-300 hover:text-white bg-transparent border-none cursor-pointer"
               >
                 {item.name}
-              </Link>
+              </button>
             ))}
           </motion.div>
         )
       }
-    </motion.nav >
+    </motion.nav>
   );
 }

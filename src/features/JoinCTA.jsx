@@ -166,13 +166,13 @@ export default function JoinCTA() {
                             </span>
                         </a>
 
-                        <a
-                            href="/deployments"
+                        <button
+                            onClick={() => document.getElementById('deployments')?.scrollIntoView({ behavior: 'smooth' })}
                             className="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white/70 hover:text-white liquid-glass hover:border-white/20 transition-all inline-flex items-center justify-center gap-2 group"
                         >
                             View Our Work
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </a>
+                        </button>
                     </motion.div>
 
                     {/* Trust text */}
