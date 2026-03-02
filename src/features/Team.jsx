@@ -5,66 +5,97 @@ import { useRef } from "react";
 const boardMembers = [
   {
     name: "Justin Mathew",
-    role: "Teacher In Charge",
+    role: "Faculty In Charge",
     desc: "Faculty at Department of Computer Science",
     image: "/Justinsir_img.jpg",
-    social: { linkedin: "#", github: "#" },
+    social: { linkedin: "https://www.linkedin.com/in/jaymat/", github: "#" },
   },
   {
     name: "Alphin D Thomas",
     role: "Chief Technical Officer",
     desc: "National CTF Semi-Finalist | 3rd Year Computer Science Undergrad",
     image: "/Alphin_img.jpg",
-    social: { linkedin: "#", github: "#" },
+    social: {
+      linkedin: "https://www.linkedin.com/in/alphin-d-thomas/",
+      github: "https://github.com/AlphinDThomas",
+    },
   },
-  {
-    name: "Jerit Reji",
-    role: "Research & Content",
-    desc: "FOSS Enthusiast | 3rd Year Computer Science Undergrad",
-    image: "/Jerit_img.jpg",
-    social: { linkedin: "#", github: "#" },
-  },
+
   {
     name: "Ashil James",
     role: "CTF Team Captain",
     desc: "Full Stack Dev | Competitive Programmer | CyberSecurity Intern @ One Team Solutions",
     image: "/Ashil_img.JPG",
-    social: { linkedin: "#", github: "#" },
+    social: {
+      linkedin: "https://www.linkedin.com/in/ashil-george-james/",
+      github: "https://github.com/Ashil-James/",
+    },
   },
+
   {
     name: "Aaron Bobby Jose",
     role: "Tool Specialist / Lab Coordinator",
     desc: "Cybersecurity Enthusiast | Web Exploitation & Reverse Engineering",
     image: "/Aaron_img.png",
-    social: { linkedin: "#", github: "#" },
+    social: {
+      linkedin: "https://www.linkedin.com/in/aaron-bobby/",
+      github: "https://github.com/Aaron0745",
+    },
   },
   {
     name: "Diya Susan Mathew",
     role: "Web & Infrastructure Admin",
     desc: "Backend Developer Intern at Lauren | Frontend Developer at Tessat",
     image: "/Diya_img.jpg",
-    social: { linkedin: "#", github: "#" },
+    social: {
+      linkedin: "https://www.linkedin.com/in/diya-susan-mathew-7186a3287/",
+      github: "https://github.com/Diya-Susan-Mathew/",
+    },
   },
-  {
-    name: "Mathew Tito",
-    role: "Community & Events",
-    desc: "3rd Year Computer Science Undergrad",
-    image: "/Mathew_img.jpg",
-    social: { linkedin: "#", github: "#" },
-  },
+
   {
     name: "Angela Mary Thomas",
     role: "Red Team Captain",
     desc: "Ethical Hacking Enthusiast | Competitive Programmer | Interned @ OneTeam Solutions",
     image: "/Angela_img.jpg",
-    social: { linkedin: "#", github: "#" },
+    social: {
+      linkedin: "https://www.linkedin.com/in/angela-mary-thomas/",
+      github: "https://github.com/AngelaMaryThomas",
+    },
   },
+
+  {
+    name: "Jerit Reji",
+    role: "Research & Content",
+    desc: "FOSS Enthusiast | 3rd Year Computer Science Undergrad",
+    image: "/Jerit_img.jpg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/jerit-reji-9186b2288/",
+      github: "#",
+    },
+  },
+
   {
     name: "Sujith S",
     role: "Blue Team Captain",
     desc: "Backend Developer | Experienced in Java & Cybersecurity Tools",
     image: "/Sujith_img.JPG",
-    social: { linkedin: "#", github: "#" },
+    social: {
+      linkedin:
+        "https://www.linkedin.com/in/sujith-s-800996297/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      github: "",
+    },
+  },
+
+  {
+    name: "Mathew Tito",
+    role: "Community & Events",
+    desc: "3rd Year Computer Science Undergrad",
+    image: "/Mathew_img.jpg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/mathew-tito-a68832298/",
+      github: "",
+    },
   },
 ];
 
@@ -128,8 +159,16 @@ function TiltCard({ children, index }) {
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouse}
       onMouseLeave={handleLeave}
-      style={{ rotateX, rotateY, transformPerspective: 800, willChange: "transform" }}
-      whileHover={{ y: -12, transition: { type: "spring", stiffness: 300, damping: 20 } }}
+      style={{
+        rotateX,
+        rotateY,
+        transformPerspective: 800,
+        willChange: "transform",
+      }}
+      whileHover={{
+        y: -12,
+        transition: { type: "spring", stiffness: 300, damping: 20 },
+      }}
       className="team-card group relative rounded-3xl p-5 md:p-8 text-center flex flex-col h-full cursor-none overflow-hidden"
     >
       {children}
@@ -158,7 +197,12 @@ export default function Team() {
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ type: "spring", stiffness: 120, damping: 14, delay: 0.1 }}
+            transition={{
+              type: "spring",
+              stiffness: 120,
+              damping: 14,
+              delay: 0.1,
+            }}
             className="inline-flex items-center justify-center w-20 h-20 xl:w-24 xl:h-24 rounded-2xl liquid-glass mb-6 overflow-hidden p-2"
           >
             <img
@@ -209,7 +253,8 @@ export default function Team() {
               <div
                 className="absolute inset-0 rounded-3xl p-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                 style={{
-                  background: "linear-gradient(135deg, #ff0055, #7a00ff, #0044ff, #ff0055)",
+                  background:
+                    "linear-gradient(135deg, #ff0055, #7a00ff, #0044ff, #ff0055)",
                   backgroundSize: "300% 300%",
                   animation: "borderGlow 4s ease infinite",
                 }}
@@ -303,7 +348,11 @@ export default function Team() {
                         color: social.hoverColor,
                       }}
                       whileTap={{ scale: 0.9 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 15,
+                      }}
                       className="w-10 h-10 xl:w-12 xl:h-12 rounded-xl liquid-glass flex items-center justify-center text-gray-500 transition-colors duration-300"
                     >
                       <social.icon className="w-4 h-4 xl:w-5 xl:h-5" />
